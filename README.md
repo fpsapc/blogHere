@@ -116,7 +116,7 @@ Not available at the moment.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **I will add more feature in this project**
+- **I will set up my models in this project**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
