@@ -25,7 +25,7 @@ RSpec.describe Comment, type: :model do
       expect(@comment).to_not be_valid
     end
 
-    it 'should return comments_counter = 1 after saving the new post' do
+    it 'Should update_post_comments_counter' do
       comment = Comment.new(author: @user, post: @post)
       comment.save
       expect(@post.comments_counter).to be 1
