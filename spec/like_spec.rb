@@ -21,10 +21,10 @@ RSpec.describe Like, type: :model do
     end
 
     it 'should update_post_likes_counter' do
-      expect {
+      expect do
         @like.save
         @post.reload
-      }.to change(@post, :likes_counter).by(1)
+      end.to change(@post, :likes_counter).by(1)
     end
   end
 end
