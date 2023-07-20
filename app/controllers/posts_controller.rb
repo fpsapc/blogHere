@@ -13,8 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    author = User.find(params[:user_id])
-    @post = author.posts.new(post_params)
+    @post = current_user.posts.new(post_params)
 
     if @post.save
       redirect_to user_path(id: @post.author_id), notice: 'Post was successfully created.'
