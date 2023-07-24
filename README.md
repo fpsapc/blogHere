@@ -111,6 +111,13 @@ Not available at the moment.
 - GitHub: [@githubhandle](https://github.com/fpsapc)
 - Twitter: [@twitterhandle](https://twitter.com/fpsapc)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/salman-ahmad1987 )
+
+## 👥 Collaborator
+👤 **Daniela Moreno**
+
+- GitHub: [@daniela](https://github.com/danielamoreno699)
+- LinkedIn: [Daniela Moreno](https://www.linkedin.com/in/daniela-moreno-06a139124/)
+
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
