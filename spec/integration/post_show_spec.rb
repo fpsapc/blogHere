@@ -5,12 +5,17 @@ RSpec.describe 'Post Show', type: :system do
     driven_by(:rack_test)
   end
 
-  user = User.create(name: 'Tom Jenkins',
-                     photo: 'https://short.url/example', posts_counter: 5)
-  post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
-                     likes_counter: 0)
+  let(:user) do
+    User.create(name: 'Adnan', photo: 'https://unsplash.com/photos/ABC123', posts_counter: 5)
+  end
 
-  comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
+  let(:post) do
+    Post.create(title: 'My First Post', text: 'This is my first post', author: user, comments_counter: 0, likes_counter: 0)
+  end
+
+  let!(:comment) do
+    Comment.create(text: 'This is my first comment', author: user, post: post)
+  end
 
   it 'displays posts title' do
     visit user_post_path(user_id: user.id, id: post.id)
@@ -38,23 +43,11 @@ RSpec.describe 'Post Show', type: :system do
   end
 
   it 'displays the user name commentor' do
-    user = User.create(name: 'Tom Jenkins',
-                       photo: 'https://short.url/example', posts_counter: 5)
-    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
-                       likes_counter: 0)
-
-    comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_post_path(user_id: user.id, id: post.id)
     expect(page).to have_content(comment.author.name)
   end
 
   it 'displays the comment text' do
-    user = User.create(name: 'Tom Jenkins',
-                       photo: 'https://short.url/example', posts_counter: 5)
-    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
-                       likes_counter: 0)
-
-    comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_post_path(user_id: user.id, id: post.id)
     expect(page).to have_content(comment.text)
   end
