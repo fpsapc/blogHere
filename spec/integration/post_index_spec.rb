@@ -65,21 +65,23 @@ RSpec.describe "Post Index", type: :system do
       expect(page).to have_content(comment.text)
     end
 
-#     it "displays the number of comments on a post" do
-#       post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
-#       comment = Comment.create(Text: "This is my first comment", author_id: user.id, post_id: post.id)
-#       visit user_posts_path(user_id: user.id)
+    it "displays the number of comments on a post" do
+        user = User.create(name: "Tom Jenkins", photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqI5QUajL66Kkwz9efY-xCyC_Bq97XyTvgPmndMocETt62-ps3VjrzLtWNrDq_Y5qa5fQ", posts_counter: 5)
+         post = Post.create(title: "My First Post", text: "This is my first post", author_id: user.id, comments_counter: 0, likes_counter: 0)
+      comment = Comment.create(text: "This is my first comment", author_id: user.id, post_id: post.id)
+      visit user_posts_path(user_id: user.id)
         
-#         expect(page).to have_content(post.CommentsCounter)
-#       end
+        expect(page).to have_content(post.comments_counter)
+      end
 
-#       it "displays the number of likes on a post" do
-#         post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
-#         like = Like.create(author_id: user.id, post_id: post.id)
-#         visit user_posts_path(user_id: user.id)
+      it "displays the number of likes on a post" do
+        user = User.create(name: "Tom Jenkins", photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqI5QUajL66Kkwz9efY-xCyC_Bq97XyTvgPmndMocETt62-ps3VjrzLtWNrDq_Y5qa5fQ", posts_counter: 5)
+         post = Post.create(title: "My First Post", text: "This is my first post", author_id: user.id, comments_counter: 0, likes_counter: 0)
+        like = Like.create(author_id: user.id, post_id: post.id)
+        visit user_posts_path(user_id: user.id)
           
-#           expect(page).to have_content(post.LikesCounter)
-#         end
+          expect(page).to have_content(post.likes_counter)
+        end
 
 #         it "redirects to post show page when clicking on post title" do
 #           post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
