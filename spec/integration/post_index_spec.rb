@@ -83,12 +83,13 @@ RSpec.describe "Post Index", type: :system do
           expect(page).to have_content(post.likes_counter)
         end
 
-#         it "redirects to post show page when clicking on post title" do
-#           post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
-#           visit user_posts_path(user_id: user.id)
-#           click_link post.Title
-#           expect(page).to have_current_path(user_post_path(user_id: user.id, id: post.id))
-#         end
+        it "redirects to post show page when clicking on post title" do
+            user = User.create(name: "Tom Jenkins", photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqI5QUajL66Kkwz9efY-xCyC_Bq97XyTvgPmndMocETt62-ps3VjrzLtWNrDq_Y5qa5fQ", posts_counter: 5)
+            post = Post.create(title: "My First Post", text: "This is my first post", author_id: user.id, comments_counter: 0, likes_counter: 0)
+          visit user_posts_path(user_id: user.id)
+          click_link post.title
+          expect(page).to have_current_path(user_post_path(user_id: user.id, id: post.id))
+        end
       
 
 
