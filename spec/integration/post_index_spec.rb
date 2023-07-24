@@ -25,11 +25,11 @@ RSpec.describe "Post Index", type: :system do
       expect(page).to have_content(user.name)
     end
 
-#   it "displays the user's post count on user posts page" do
-#     visit user_posts_path(user_id: user.id)
+  it "displays the user's post count on user posts page" do
+    visit users_path(user_id: user.id)
       
-#       expect(page).to have_content(user.post_counter)
-#     end
+      expect(page).to have_content(user.posts_counter)
+    end
 
 #   it "displays a post title on user posts page" do
 #     post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
