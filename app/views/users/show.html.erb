@@ -6,13 +6,9 @@
   <% else %>
     <!-- Provide a placeholder image or default image here if 'user.photo' is nil -->
   <% end %>
-      <div class="user-data border">
+        <div class="user-data border">
         <h1><%= @user.name %></h1>
         <p class="number-posts"><%= @user.posts_counter %> Posts</p>
-        <div class="right">
-          <%= link_to "Add a post", new_user_post_path(@user), class: "btn right" %>
-        </div>
-      </div>
     </div>
     <div class="card">
       <div class="column">
