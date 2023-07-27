@@ -124,16 +124,6 @@ Not available at the moment.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **I will add following features in this project**
-- Validations and Model specs.
-- Processing data in models.
-- Setup and controllers.
-- Controllers specs.
-- Views.
-- Forms.
-- Integration specs for Views and fixing n+1 problems.
-- Add Devise.
-- Add authorization rules.
-- Add API endpoints.
 - API documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
