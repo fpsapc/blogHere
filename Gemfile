@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'rswag'
+
 gem 'cancancan', '~> 3.5'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
